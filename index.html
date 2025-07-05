@@ -112,7 +112,9 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 15px 35px;
             font-weight: 600;
             text-decoration: none;
@@ -126,15 +128,16 @@
         .btn-primary {
             background-color: var(--accent);
             color: var(--white);
-            box-shadow: var(--shadow);
+            box-shadow: 0 0 0 0 rgba(255, 125, 0, 0.7);
             animation: pulse 2s infinite;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-primary:hover {
             background-color: var(--accent-dark);
             transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
-            animation: none;
         }
 
         @keyframes pulse {
@@ -142,11 +145,16 @@
                 box-shadow: 0 0 0 0 rgba(255, 125, 0, 0.7);
             }
             70% {
-                box-shadow: 0 0 0 10px rgba(255, 125, 0, 0);
+                box-shadow: 0 0 0 15px rgba(255, 125, 0, 0);
             }
             100% {
                 box-shadow: 0 0 0 0 rgba(255, 125, 0, 0);
             }
+        }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.2em;
         }
 
         .btn-secondary {
@@ -200,6 +208,9 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .benefit-card:hover {
@@ -211,6 +222,13 @@
             font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 20px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 125, 0, 0.1);
+            border-radius: 50%;
         }
 
         .benefit-title {
@@ -238,7 +256,6 @@
             border-radius: 8px;
             overflow: hidden;
             transition: all 0.3s ease;
-            text-align: left;
         }
 
         .faq-item:hover {
@@ -262,6 +279,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
+            text-align: left;
         }
 
         .faq-answer.active {
@@ -291,13 +309,16 @@
             border-radius: 0 8px 8px 0;
             margin: 40px auto;
             max-width: 800px;
-            text-align: left;
+            text-align: center;
         }
 
         .highlight-box p {
             font-size: 1.1rem;
             color: var(--text);
             margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         footer {
@@ -361,6 +382,7 @@
             .description {
                 font-size: 1.1rem;
                 padding: 0 15px;
+                text-align: center;
             }
             
             .cta-buttons {
@@ -394,6 +416,7 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
                 padding: 0 15px;
+                gap: 20px;
             }
             
             .faq-question {
@@ -408,6 +431,15 @@
             .highlight-box {
                 margin: 30px 15px;
                 padding: 20px;
+            }
+
+            .faq-answer, .faq-answer p {
+                text-align: center;
+            }
+
+            .highlight-box p {
+                flex-direction: column;
+                text-align: center;
             }
         }
 
@@ -430,6 +462,12 @@
             
             .highlight-box {
                 padding: 15px;
+            }
+
+            .benefit-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
             }
         }
     </style>
@@ -581,36 +619,4 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-links">
-                    <a href="https://daaz.com/buy/domains/JacksonvilleDraincleaning.com#">Buy Now</a>
-                    <a href="mailto:rick@JacksonvilleDraincleaning.com">Contact Owner</a>
-                    <a href="#benefits">Benefits</a>
-                    <a href="#faq">Questions</a>
-                </div>
-                <p class="copyright">JacksonvilleDraincleaning.com - All Rights Reserved © 2025</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const answer = question.nextElementSibling;
-                const toggle = question.querySelector('.faq-toggle');
-                
-                // Close all other open items
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    if (faq !== item) {
-                        faq.querySelector('.faq-answer').classList.remove('active');
-                        faq.querySelector('.faq-toggle').classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                answer.classList.toggle('active');
-                toggle.classList.toggle('active');
-            });
-        });
-    </script>
-</body>
-</html>
+                    <a href="https://daaz.com/buy/domains/Jacks
