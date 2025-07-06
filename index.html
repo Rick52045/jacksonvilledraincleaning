@@ -71,7 +71,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
         }
 
         h1 {
@@ -122,7 +121,9 @@
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             padding: 15px 35px;
             font-weight: 600;
             text-decoration: none;
@@ -136,7 +137,7 @@
         .btn-primary {
             background-color: var(--accent);
             color: var(--white);
-            box-shadow: var(--shadow);
+            box-shadow: 0 0 0 0 rgba(255, 125, 0, 0.7);
             animation: pulse 2s infinite;
         }
 
@@ -144,7 +145,6 @@
             background-color: var(--accent-dark);
             transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
-            animation: none;
         }
 
         @keyframes pulse {
@@ -152,11 +152,15 @@
                 box-shadow: 0 0 0 0 rgba(255, 125, 0, 0.7);
             }
             70% {
-                box-shadow: 0 0 0 10px rgba(255, 125, 0, 0);
+                box-shadow: 0 0 0 15px rgba(255, 125, 0, 0);
             }
             100% {
                 box-shadow: 0 0 0 0 rgba(255, 125, 0, 0);
             }
+        }
+
+        .btn i {
+            margin-right: 10px;
         }
 
         .btn-secondary {
@@ -221,6 +225,8 @@
             font-size: 2.5rem;
             color: var(--accent);
             margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
         }
 
         .benefit-title {
@@ -237,63 +243,6 @@
             line-height: 1.5;
         }
 
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            text-align: left;
-        }
-
-        .faq-item:hover {
-            border-color: var(--accent);
-        }
-
-        .faq-question {
-            padding: 20px 25px;
-            background-color: var(--light-bg);
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-        }
-
-        .faq-answer {
-            padding: 0 25px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-        }
-
-        .faq-answer.active {
-            padding: 20px 25px;
-            max-height: 500px;
-        }
-
-        .faq-answer p {
-            color: var(--text-light);
-            margin-bottom: 0;
-            line-height: 1.6;
-        }
-
-        .faq-toggle {
-            transition: transform 0.3s ease;
-            color: var(--accent);
-        }
-
-        .faq-toggle.active {
-            transform: rotate(180deg);
-        }
-
         .highlight-box {
             background-color: var(--light-bg);
             border-left: 4px solid var(--accent);
@@ -301,13 +250,20 @@
             border-radius: 0 8px 8px 0;
             margin: 40px auto;
             max-width: 800px;
-            text-align: left;
+            text-align: center;
         }
 
         .highlight-box p {
             font-size: 1.1rem;
             color: var(--text);
             margin-bottom: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .highlight-box i {
+            margin-right: 10px;
         }
 
         footer {
@@ -371,7 +327,6 @@
             .description {
                 font-size: 1.1rem;
                 padding: 0 15px;
-                text-align: center;
             }
             
             .cta-buttons {
@@ -405,29 +360,12 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
                 padding: 0 15px;
-            }
-            
-            .faq-question {
-                padding: 15px 20px;
-                font-size: 1rem;
-            }
-            
-            .faq-container {
-                padding: 0 15px;
+                gap: 20px;
             }
             
             .highlight-box {
                 margin: 30px 15px;
                 padding: 20px;
-                text-align: center;
-            }
-            
-            .highlight-box p {
-                text-align: center;
-            }
-            
-            .faq-answer p {
-                text-align: center;
             }
         }
 
@@ -442,10 +380,6 @@
             
             .section-title {
                 font-size: 1.6rem;
-            }
-            
-            .benefits-grid {
-                max-width: 100%;
             }
             
             .highlight-box {
@@ -527,60 +461,7 @@
     <section id="highlight">
         <div class="container">
             <div class="highlight-box">
-                <p><i class="fas fa-exclamation-circle" style="color: var(--accent); margin-right: 10px;"></i> Premium domains like this sell quickly. The owner is motivated - act now to secure this valuable asset for your plumbing business.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq">
-        <div class="container">
-            <h2 class="section-title">Common Questions</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How will this domain make me money?</span>
-                        <i class="fas fa-chevron-down faq-toggle"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Local customers searching for drain cleaning in Jacksonville are more likely to click your website. This brings you direct calls without paying for ads.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>I already have a website – do I still need this?</span>
-                        <i class="fas fa-chevron-down faq-toggle"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes. You can redirect it to your current website and get more traffic, or use it in ads for higher trust and better conversions.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Why not just use Google Ads?</span>
-                        <i class="fas fa-chevron-down faq-toggle"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>This domain works 24/7 for a one-time price. Google Ads stop when you stop paying.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Can I put it on my trucks and cards?</span>
-                        <i class="fas fa-chevron-down faq-toggle"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes. It's memorable and shows exactly what you do and where, building instant trust.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How soon will it pay for itself?</span>
-                        <i class="fas fa-chevron-down faq-toggle"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Even a single new customer could cover the cost in the first week.</p>
-                    </div>
-                </div>
+                <p><i class="fas fa-exclamation-circle"></i> Premium domains like this sell quickly. The owner is motivated - act now to secure this valuable asset for your plumbing business.</p>
             </div>
         </div>
     </section>
@@ -610,6 +491,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        document.querySelectorAll('.faq-question').forEach(question =
+</body>
+    </html>
