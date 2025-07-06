@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
+      
+        /* تعديلات خاصة للهاتف فقط */
+@media (max-width: 768px) {
+    .header-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    h1, 
+    .price-tag,
+    .domain-display {
+        text-align: center !important;
+        margin: 10px auto;
+        width: 100%;
+    }
+}
+
         :root {
             --primary: #0056b3;
             --primary-dark: #003d7a;
