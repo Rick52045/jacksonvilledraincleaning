@@ -82,9 +82,6 @@
             margin-bottom: 15px;
             line-height: 1.2;
             padding: 0 10px;
-            word-break: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
         }
         
         .domain-display {
@@ -96,6 +93,13 @@
             border-radius: 6px;
             margin: 20px 0;
             border: 1px solid rgba(255, 255, 255, 0.2);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
         
         .price-tag {
@@ -373,8 +377,9 @@
             }
             
             .domain-display {
-                font-size: 1.6rem;
-                padding: 10px 20px;
+                font-size: 1.8rem;
+                padding: 10px 15px;
+                margin: 15px auto;
             }
             
             .price-tag {
@@ -407,20 +412,12 @@
         
         @media (max-width: 576px) {
             header h1 {
-                font-size: 1.8rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 100%;
-                display: inline-block;
+                font-size: 1.7rem;
             }
             
             .domain-display {
-                font-size: 1.4rem;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                max-width: 90%;
+                font-size: 1.5rem;
+                padding: 8px 12px;
             }
             
             .section-title {
@@ -434,14 +431,12 @@
         
         @media (max-width: 400px) {
             header h1 {
-                font-size: 1.6rem;
-                white-space: normal;
+                font-size: 1.5rem;
             }
             
             .domain-display {
                 font-size: 1.3rem;
-                white-space: normal;
-                word-break: break-all;
+                padding: 6px 10px;
             }
         }
     </style>
@@ -612,48 +607,4 @@
                 <a href="#benefits">Benefits</a>
                 <a href="#faq">Questions</a>
             </div>
-            <p class="copyright">JacksonvilleDraincleaning.com - All Rights Reserved © 2025</p>
-        </div>
-    </footer>
-    
-    <script>
-        // FAQ Accordion Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const answer = question.nextElementSibling;
-                const toggle = question.querySelector('.faq-toggle');
-                
-                // Close all other open items
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    if (faq !== item) {
-                        faq.querySelector('.faq-answer').classList.remove('active');
-                        faq.querySelector('.faq-toggle').classList.remove('active');
-                    }
-                });
-                
-                // Toggle current item
-                answer.classList.toggle('active');
-                toggle.classList.toggle('active');
-            });
-        });
-        
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+            <p cl
